@@ -1,6 +1,8 @@
 # Picky
 
-Picky is a jQuery plugin that provides a modern, flexible UI for `<select>` menus.
+Picky is a jQuery plugin that provides a modern, flexible UI (using Bootstrap dropdowns) for `<select>` menus.
+
+Requires jQuery (v1.9+ recommended) and Bootstrap (v2, v3+).
 
 This is based on the great [Bootstrap Multiselect](http://davidstutz.github.io/bootstrap-multiselect/), but adds a number of features and improvements. _Note that the modified code has not yet been merged (it's currently tied up in a hacked version of bootstrap-multiselect in another project)._
 
@@ -18,5 +20,6 @@ This is based on the great [Bootstrap Multiselect](http://davidstutz.github.io/b
   - When a menu is closed and has focus, and filtering is enabled, you can just start typing; the dropdown immediately opens and keyboard input goes to search field
   - While filtering, press arrow up/down to select a result, and [return] to select it
   - For single-select menus, pressing [return] while the currently-selected item has focus no longer deselects it
-  - Shift + tab now moves focus to search field if one of the menu items has focus
-    - When the search field has focus, shift + tab moves focus to the previous element in the same tabindex
+  - Improved tab key behavior
+    - When focus is on a menu item, shift + tab moves focus to the search field instead of just closing the dropdown (as expected, since tab moves focus from the search field to menu items)
+    - When the search field has focus, shift + tab moves focus to the previous element in the same tabindex (previously it just closed the dropdown and did not move focus as expected)
