@@ -13,7 +13,7 @@ This is based on the great [Bootstrap Multiselect](http://davidstutz.github.io/b
 - Improvements to UI behavior
   - Pressing [esc] does not open the dropdown when button is closed and has focus (Bootstrap issue, fixed in v.3.3.0; fix is only applied when using an older version of Bootstrap)
   - When used in a modal dialog, pressing [esc] closes open menus without also closing the dialog
-  - No longer traps all keyboard events, so browser shortcuts (such as reload via cmd-R or F5) work even while a menu is open
+  - Browser/OS keyboard shortcuts now work while a menu is open (key event listener no longer calls `event.preventDefault()` when the event includes a modifier key other than [shift])
   - Search field automatically gets focus when menu is opened
   - Search field is cleared when menu is closed
   - Use arrow up/down to move in and out of the search field
@@ -23,3 +23,4 @@ This is based on the great [Bootstrap Multiselect](http://davidstutz.github.io/b
   - Improved tab key behavior
     - When focus is on a menu item, shift + tab moves focus to the search field instead of just closing the dropdown (as expected, since tab moves focus from the search field to menu items)
     - When the search field has focus, shift + tab moves focus to the previous element in the same tabindex (previously it just closed the dropdown and did not move focus as expected)
+  - Prevents closing dropdown when clicking non-actionable area in dropdown (such as small gaps between menu items)
