@@ -18,3 +18,5 @@ This is based on the great [Bootstrap Multiselect](http://davidstutz.github.io/b
   - When a menu is closed and has focus, and filtering is enabled, you can just start typing; the dropdown immediately opens and keyboard input goes to search field
   - While filtering, press arrow up/down to select a result, and [return] to select it
   - For single-select menus, pressing [return] while the currently-selected item has focus no longer deselects it
+  - Shift + tab now moves focus to search field if one of the menu items has focus
+    - When the search field has focus, shift + tab moves focus to the previous element in the same tabindex
